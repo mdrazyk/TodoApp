@@ -44,10 +44,6 @@
   padding: 1em;
 }
 
-.App-body>div:hover {
-  opacity: 0.2;
-}
-
 .App-body>div:nth-child(odd) {
   background: #BCAAA4;
 }

@@ -1,14 +1,45 @@
 .Todo {
     display: grid;
-    grid-template-rows: 0.2fr 0.6fr 0.2fr;
-    grid-auto-rows: 15em;
+    grid-template-rows: 0.2fr 0.7fr 0.1fr;
 }
 
-.Todo:first-child>p {
+.Todo-header {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.Todo:first-child>p:nth-of-type(2) {
+    height: 160px;
     text-align: center;
     overflow: scroll;
 }
 
 .Todo>p::-webkit-scrollbar {
     display: none;
+}
+
+.Todo-footer {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.Todo-footer >p{
+    margin: 0.1em;
+}
+
+.Todo-footer>p:hover {
+    background: #E0E0E0;
+}
+
+.Todo-single {
+    display: grid;
+    grid-template-rows: 0.8fr 0.2fr;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.Todo-footer-single {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
 }
