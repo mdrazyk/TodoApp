@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #795548;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+
+.App-title {
+  font-size: 3.5em;
+}
+
+.App-nav {
+  background: #A1887F;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(1em, auto);
+  height: 3em;
+  margin: 1em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.App-nav>a:hover {
+  background: #BCAAA4;
+}
+
+.App-body {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1em;
+  grid-auto-rows: minmax(20em, auto);
+  padding: 1em;
+}
+
+.App-body>div {
+  background: #D7CCC8;
+  padding: 1em;
+}
+
+.App-body>div:hover {
+  opacity: 0.2;
+}
+
+.App-body>div:nth-child(odd) {
+  background: #BCAAA4;
+}
+
+.App-intro {
+  font-size: large;
+}
