@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
-import './App.css';
-import './Todo.css';
+import React, { Component } from 'react'
+import Todo from './components/todo'
+import './App.css'
+import './components/Todo.css'
 
 class App extends Component {
+  done = () => console.log('Done')
+  reject = () => console.log('Reject')
+  expand = () => console.log('Expand')
   render() {
     return (
       <div className="App">
@@ -17,7 +21,7 @@ class App extends Component {
         <div className="App-body">
           <div className="Todo">
             <p className="Todo-header">Kupić masło</p>
-            <p>
+            <p className="Todo-body">
               Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
               Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
               Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
@@ -38,7 +42,7 @@ class App extends Component {
           <div>
            <div className="Todo">
             <p className="Todo-header">Wyciągnąć ze zmywarki</p>
-            <p>
+            <p className="Todo-body">
               Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
               Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
 
@@ -69,7 +73,13 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <div>asdasd</div>
+          <Todo 
+            todoTitle="Weź wypierdalaj!"
+            todoBody="Sam spierdalaj leszczu jeden!!!!!"
+            done={this.done}
+            expand={this.expand}
+            reject={this.reject}
+            />
           <div>asdasd</div>
           <div>asdasd</div>
           <div>asdasd</div>

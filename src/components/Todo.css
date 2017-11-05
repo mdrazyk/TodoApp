@@ -8,6 +8,10 @@
     font-weight: bold;
 }
 
+.Todo-body {
+    height: 160px;
+}
+
 .Todo:first-child>p:nth-of-type(2) {
     height: 160px;
     text-align: center;
@@ -31,9 +35,9 @@
     background: #E0E0E0;
 }
 
-.Todo-single {
+.Todo-single{
     display: grid;
-    grid-template-rows: 0.8fr 0.2fr;
+    grid-template-rows: 12.2ex 0.1ex;
     text-transform: uppercase;
     font-weight: bold;
     font-size: xx-large;
@@ -42,4 +46,5 @@
 .Todo-footer-single {
     display: grid;
     grid-template-columns: repeat(2, auto);
+    font-weight: normal;
 }
