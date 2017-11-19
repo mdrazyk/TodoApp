@@ -2,4 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
+  background: #642a03;
+}
+
+#modal {
+  position: relative;
+  z-index: 1;
 }

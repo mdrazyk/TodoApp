@@ -13,37 +13,37 @@
     position: absolute;
 }
 
-.large {
-    height: 100px;
-    width: 100px;
+.Large {
+    height: 6.3em;
+    width: 6.3em;
 }
 
-.medium {
-    height: 80px;
-    width: 80px;
+.Medium {
+    height: 4.7em;
+    width: 4.7em;
 }
 
-.small {
-    height: 60px;
-    width: 60px;
-    animation-duration: 5000ms;
+.Small {
+    height: 2.9em;
+    width: 2.9em;
+    animation-duration: 4600ms;
 }
 
-.second {
-    left: 95px;
-    top: 19px;
+.Second {
+    left: 96px;
+    top: 22px;
 }
 
-.third {
+.Third {
     left: 79px;
-    top: 89px;
+    top: 84px;
 }
 
-.right {
+.Right {
     animation-name: spin-right;
 }
 
-.left {
+.Left {
     animation-name: spin-left;
 }
 

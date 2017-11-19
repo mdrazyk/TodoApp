@@ -11,7 +11,7 @@
 .Todo-body {
     height: 160px;
     text-align: center;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .Todo>p::-webkit-scrollbar {
@@ -23,12 +23,14 @@
     grid-template-columns: repeat(3, auto);
 }
 
-.Todo-footer >p{
+.Todo-footer>img{
+    align-self: center;
     margin: 0.1em;
+    padding: 1em;
 }
 
-.Todo-footer>p:hover {
-    background: #8bc1ec;
+.Todo-footer>img:hover {
+    background: #ffd8b8;
 }
 
 .Todo-single{
@@ -43,4 +45,10 @@
     display: grid;
     grid-template-columns: repeat(2, auto);
     font-weight: normal;
+}
+
+.image {
+    width: 2em;
+    height: 2em;
+    justify-self: center;
 }
