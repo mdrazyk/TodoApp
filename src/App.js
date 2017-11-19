@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TodosFactory from './components/todo/TodosFactory'
+import Logo from './components/logo/Logo'
 import Sortable from 'sortablejs'
 import './App.css'
 import './components/todo/Todo.css'
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <Logo/>
           <h1 className="App-title">Simple Todo App</h1>
         </header>
         <nav className="App-nav">

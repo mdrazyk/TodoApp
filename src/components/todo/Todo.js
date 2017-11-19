@@ -1,6 +1,6 @@
-import React from 'react';
-import propTypes from 'prop-types';
-import './Todo.css';
+import React from 'react'
+import propTypes from 'prop-types'
+import './Todo.css'
 
 const Todo = ({id, todoTitle, todoBody, done, reject, expand}) => 
     <div className="Todo">

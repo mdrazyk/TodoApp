@@ -11,7 +11,8 @@ const TodosFactory = ({todosEndpoint}) => {
 
     //implement fetching info from todo endpoint. Now it's hardcoded values
     const fetchTodosInfo = (url) => {
-        return [{
+        return [
+            {
                 title: 'aaaaaaaaaa aa',
                 body: 'bsdfbsdfdsfbsrbsdfvsdf rdaf asf sadf asef afsfasdfsadfsadfsf'
             },

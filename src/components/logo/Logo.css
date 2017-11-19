@@ -1,0 +1,66 @@
+.Logo-area {
+    position: fixed;
+    max-width: 100px;
+}
+
+.Logo {
+    animation-duration: 8000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.Logo-area>div {
+    position: absolute;
+}
+
+.large {
+    height: 60px;
+    width: 60px;
+}
+
+.medium {
+    height: 50px;
+    width: 50px;
+}
+
+.small {
+    height: 30px;
+    width: 30px;
+    animation-duration: 5000ms;
+}
+
+.second {
+    left: 54px;
+    top: 20px;
+}
+
+.third {
+    left: 37px;
+    top: 57px;
+}
+
+.right {
+    animation-name: spin-right;
+}
+
+.left {
+    animation-name: spin-left;
+}
+
+@keyframes spin-right {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-left {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
