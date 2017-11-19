@@ -13,8 +13,8 @@ const TodosFactory = ({todosEndpoint}) => {
     const fetchTodosInfo = (url) => {
         return [
             {
-                title: 'aaaaaaaaaa aa',
-                body: 'bsdfbsdfdsfbsrbsdfvsdf rdaf asf sadf asef afsfasdfsadfsadfsf'
+                title: 'Zrób coś tam',
+                body: 'Kupić chleb i bułkę'
             },
             {
                 title: 'sdfihiushdf u aa',

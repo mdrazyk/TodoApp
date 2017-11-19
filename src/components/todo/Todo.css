@@ -10,10 +10,6 @@
 
 .Todo-body {
     height: 160px;
-}
-
-.Todo:first-child>p:nth-of-type(2) {
-    height: 160px;
     text-align: center;
     overflow: scroll;
 }
@@ -32,7 +28,7 @@
 }
 
 .Todo-footer>p:hover {
-    background: #E0E0E0;
+    background: #8bc1ec;
 }
 
 .Todo-single{

@@ -1,5 +1,5 @@
 .Logo-area {
-    position: fixed;
+    position: absolute;
     max-width: 100px;
 }
 
@@ -14,29 +14,29 @@
 }
 
 .large {
-    height: 60px;
-    width: 60px;
+    height: 100px;
+    width: 100px;
 }
 
 .medium {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
 }
 
 .small {
-    height: 30px;
-    width: 30px;
+    height: 60px;
+    width: 60px;
     animation-duration: 5000ms;
 }
 
 .second {
-    left: 54px;
-    top: 20px;
+    left: 95px;
+    top: 19px;
 }
 
 .third {
-    left: 37px;
-    top: 57px;
+    left: 79px;
+    top: 89px;
 }
 
 .right {
