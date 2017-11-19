@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Todo from './components/todo'
+import Todo from './components/todo/Todo'
 import './App.css'
-import './components/Todo.css'
+import './components/todo/Todo.css'
 
 class App extends Component {
   done = () => console.log('Done')
