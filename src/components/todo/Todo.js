@@ -7,7 +7,7 @@ const Todo = ({id, todoTitle, todoBody, done, reject, expand}) =>
         <p className="Todo-header">{todoTitle}</p>
         <p className="Todo-body">{todoBody}</p>
         <div className="Todo-footer">
-            <img src="accept.png" className="image" onClick={() => done()}/>
+            <img src="done.png" className="image" onClick={() => done()}/>
             <img src="expand.png" className="image" onClick={() => expand()}/>
             <img src="decline.png" className="image" onClick={() => reject()}/>
         </div>
