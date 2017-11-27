@@ -1,19 +1,21 @@
-import React, { Component } from 'react'
-import TodosFactory from './components/todo/TodosFactory'
+import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
+import CreateTodo from './containers/Todo/Create'
 import Logo from './components/logo/Logo'
-import AddTodo from './components/addTodo/AddTodo'
+import AddTodo from './containers/Todo/Add'
 import Sortable from 'sortablejs'
+import { showModal } from './actions'
 import './App.css'
 import './components/todo/Todo.css'
 
-class App extends Component {
-  constructor(props) {
-    super(props)
+const mapStateToProps = (state) => ({
+  showAddModal: state.modal
+})
 
-    this.state = {
-      showAddTodo: false
-    }
-  }
+const mapDispatchToProps = {
+  fooo: showModal
+}
+class App extends PureComponent {
   componentDidMount(){
     const items = document.getElementById("items")
     Sortable.create(items, {
@@ -23,14 +25,17 @@ class App extends Component {
     })
   }
 
-  openAddTodo = () => this.setState((prevState, props) =>({
-    showAddTodo: !this.state.showAddTodo
-  }))
-
   render() {
-    const modal = this.state.showAddTodo ? <AddTodo cancel={this.openAddTodo}/> : null
-    
-    const todos = TodosFactory('http://foo.com')
+    const showAddModal = this.props.showAddModal.slice(-1)[0] || false
+    const modal = showAddModal ? <AddTodo/> : null
+
+    const todos = <CreateTodo
+        todoTitle="Hello World"
+        todoBody="This is body of my Hello World todo"
+        done={() => console.log("done")}
+        reject={() => console.log("reject")}
+        expand={() => console.log("expand")}
+      />
     
     return (
       <div className="App">
@@ -40,7 +45,7 @@ class App extends Component {
         </header>
         <nav className="App-nav">
           <a><p>Active Todos</p></a>
-          <a onClick={this.openAddTodo}><p>Add Todo</p></a>
+          <a onClick={this.props.fooo}><p>Add Todo</p></a>
           <a><p>Completed Todos</p></a>
         </nav>
         <div id="items" className="App-body">
@@ -52,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

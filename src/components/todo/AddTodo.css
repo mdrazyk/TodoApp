@@ -27,12 +27,12 @@
 
 .Add-button {
     padding: 1em;
-    float: left;
+    float: right;
 }
 
 .Cancel-button {
     padding: 1em;
-    float: right;
+    float: left;
 }
 
 .Add-button:hover {
