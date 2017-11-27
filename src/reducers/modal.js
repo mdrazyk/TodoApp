@@ -3,12 +3,12 @@ const modal = (state = [], action) => {
         case 'SHOW_MODAL':
             return [
                 ...state,
-                action.show   
+                {show: action.show}   
             ]
         case 'DONT_SHOW_MODAL':
             return [
                 ...state,
-                action.show
+                {show: action.show}
             ]
         default:
             return state

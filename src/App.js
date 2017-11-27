@@ -13,7 +13,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-  fooo: showModal
+  _showModal: showModal
 }
 class App extends PureComponent {
   componentDidMount(){
@@ -27,7 +27,7 @@ class App extends PureComponent {
 
   render() {
     const showAddModal = this.props.showAddModal.slice(-1)[0] || false
-    const modal = showAddModal ? <AddTodo/> : null
+    const modal = showAddModal.show ? <AddTodo/> : null
 
     const todos = <CreateTodo
         todoTitle="Hello World"
@@ -45,7 +45,7 @@ class App extends PureComponent {
         </header>
         <nav className="App-nav">
           <a><p>Active Todos</p></a>
-          <a onClick={this.props.fooo}><p>Add Todo</p></a>
+          <a onClick={this.props._showModal}><p>Add Todo</p></a>
           <a><p>Completed Todos</p></a>
         </nav>
         <div id="items" className="App-body">
