@@ -4,7 +4,7 @@ import CreateTodo from './containers/Todo/Create'
 import Logo from './components/logo/Logo'
 import AddTodo from './containers/Todo/Add'
 import Sortable from 'sortablejs'
-import { showModal } from './actions'
+import { showModal, addTodo } from './actions'
 import './App.css'
 import './components/todo/Todo.css'
 
@@ -13,7 +13,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = {
-  _showModal: showModal
+  _showModal: showModal,
+  _addTodo: addTodo
 }
 class App extends PureComponent {
   componentDidMount(){

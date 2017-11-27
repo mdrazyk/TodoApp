@@ -4,7 +4,8 @@ const todos = (state = [], action) => {
       return [
         ...state,
         {
-          allTodos: action.addTodo
+          id: action.id,
+          todo: action.todo
         }
       ]
     default:

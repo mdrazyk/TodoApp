@@ -1,6 +1,8 @@
-export const addTodo = (addTodo) => ({
+let _id = 0
+export const addTodo = (todo) => ({
     type: 'ADD_TODO',
-    addTodo: addTodo
+    id: _id++,
+    todo: todo,
   })
 
 export const showModal = () => ({
