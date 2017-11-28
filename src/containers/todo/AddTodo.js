@@ -1,6 +1,4 @@
-import React from 'react'
 import { addTodo, dontShowModal } from '../../actions'
-import store from '../../store'
 import AddTodo from '../../components/todo/AddTodo'
 import { connect } from 'react-redux'
 

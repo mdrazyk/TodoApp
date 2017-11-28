@@ -28,3 +28,8 @@ const AddTodo = ({todos, dontShowModal}) =>
                     </Modal>
 
 export default AddTodo
+
+AddTodo.propTypes = {
+    todos: propTypes.func.isRequired,
+    dontShowModal: propTypes.func.isRequired
+}

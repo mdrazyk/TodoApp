@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import todo from '../../actions'
 import Todo from '../../components/todo/Todo'
 
 const mapStateToProps = (state, ownProps) => ({
