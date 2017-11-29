@@ -1,4 +1,4 @@
-const modal = (state = [], action) => {
+export const modal = (state = [], action) => {
     switch (action.type) {
         case 'SHOW_MODAL':
             return [
@@ -14,5 +14,3 @@ const modal = (state = [], action) => {
             return state
     }
 }
-
-export default modal

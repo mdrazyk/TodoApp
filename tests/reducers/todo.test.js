@@ -1,4 +1,5 @@
-import todos from '../../src/reducers/todos'
+import { todos } from '../../src/reducers/todos'
+import { todoState } from '../../src/reducers/todoState'
 
 describe('todo reducer', () => {
     it('should return the initial state', () => {
@@ -9,45 +10,53 @@ describe('todo reducer', () => {
         expect(todos([], {
                 type: 'ADD_TODO',
                 id: 0,
-                todo: {
-                    title: 'Hello World',
-                    body: 'Welcome to jackass!'
-                }
+                title: 'Hello World',
+                body: 'Welcome to jackass!'
             }))
-            .toEqual([{
+            .toEqual([[{
                 id: 0,
-                todo: {
-                    title: 'Hello World',
-                    body: 'Welcome to jackass!'
-                }
-            }])
+                title: 'Hello World',
+                body: 'Welcome to jackass!'
+            }]])
     })
 
     it('should handle TODO_STATE for DONE state', () => {
-        expect(todos([], {
-            type: 'TODO_STATE',
-            state: 'DONE'
-        }))
-        .toEqual([[{
-            state: 'DONE'
-        }]])
+        expect(todoState([], {
+                type: 'TODO_STATE',
+                id: 0,
+                state: 'DONE'
+            }))
+            .toEqual([
+                {
+                    id: 0,
+                    state: 'DONE'
+                }
+            ])
     })
     it('should handle TODO_STATE for REJECT state', () => {
-        expect(todos([], {
-            type: 'TODO_STATE',
-            state: 'REJECT'
-        }))
-        .toEqual([[{
-            state: 'REJECT'
-        }]])
+        expect(todoState([], {
+                type: 'TODO_STATE',
+                id: 0,
+                state: 'REJECT'
+            }))
+            .toEqual([
+                {
+                    id: 0,
+                    state: 'REJECT'
+                }
+            ])
     })
     it('should handle TODO_STATE for EXPAND state', () => {
-        expect(todos([], {
-            type: 'TODO_STATE',
-            state: 'EXPAND'
-        }))
-        .toEqual([[{
-            state: 'EXPAND'
-        }]])
+        expect(todoState([], {
+                type: 'TODO_STATE',
+                id: 0,
+                state: 'EXPAND'
+            }))
+            .toEqual([
+                {
+                    id: 0,
+                    state: 'EXPAND'
+                }
+            ])
     })
 })

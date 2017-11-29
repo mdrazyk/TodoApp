@@ -1,17 +1,20 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import _ from 'lodash'
+
 import CreateTodo from './containers/todo/CreateTodo'
 import Logo from './components/logo/Logo'
 import AddTodo from './containers/todo/AddTodo'
 import Sortable from 'sortablejs'
 import { showModal, addTodo, setTodoState } from './actions'
-import store from './store'
+
 import './App.css'
 import './components/todo/Todo.css'
 
 const mapStateToProps = (state) => ({
-  showAddModal: state.modal,
-  todos: state.todos
+  showAddModal: _.last(state.modal),
+  todos: _.last(state.todos),
+  todoState: _.last(state.todoState)
 })
 
 const mapDispatchToProps = {
@@ -30,21 +33,18 @@ class App extends PureComponent {
   }
 
   render() {
-    const state = store.getState()
-    // const todos = null
-    const showAddModal = this.props.showAddModal.slice(-1)[0] || false
+    const showAddModal = this.props.showAddModal || false
     const modal = showAddModal.show ? <AddTodo/> : null
-    // const todos = state.todos.map(e => 
-    //   <CreateTodo
-    //     key={e.id}
-    //     todoTitle={e.todo.title}
-    //     todoBody={e.todo.body}
-    //     done={() => this.props._setTodoState('DONE')}
-    //     reject={() => this.props._setTodoState('REJECT')}
-    //     expand={() => this.props._setTodoState('EXPAND')}
-    //   />
-    // )
-    const todos = null
+    const todos = this.props.todos ? this.props.todos.map(e => 
+      <CreateTodo
+        key={e.id}
+        todoTitle={e.title}
+        todoBody={e.body}
+        done={() => this.props._setTodoState(e.id, 'DONE')}
+        reject={() => this.props._setTodoState(e.id, 'REJECT')}
+        expand={() => this.props._setTodoState(e.id, 'EXPAND')}
+      />
+    ) : null
     
     return (
       <div className="App">

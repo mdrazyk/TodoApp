@@ -7,20 +7,22 @@ describe('addTodo action', () => {
             body: 'Welcome to jackass!!'
         }
         const expectedAction = {
+            id: 0,
             type: 'ADD_TODO',
-            todo: todo,
-            state: 'DEFAULT',
-            id: 0
+            title: todo.title,
+            body: todo.body
         }
         expect(addTodo(todo)).toEqual(expectedAction)
     })
 
     it('should create an action that set state to `Done`', () => {
+        const id = 0
         const state = 'DONE'
         const expectedAction = {
             type: 'TODO_STATE',
+            id: 0,
             state: 'DONE'
         }
-        expect(setTodoState(state)).toEqual(expectedAction)
+        expect(setTodoState(id, state)).toEqual(expectedAction)
     })
 })

@@ -1,8 +1,7 @@
-import _ from 'lodash'
 import { treeObjectStructure } from '../utils/treeObjectStructure'
 const initialState = []
 
-const todos = (state = initialState, action) => {
+export const todos = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
@@ -10,20 +9,12 @@ const todos = (state = initialState, action) => {
         treeObjectStructure([state,
           {
             id: action.id,
-            title: action.todo.title,
-            body: action.todo.body
+            title: action.title,
+            body: action.body
           }
         ])
-      ]
-    case 'TODO_STATE':
-      return [
-        ...state, [{
-          state: action.state
-        }]
       ]
     default:
       return state
   }
 }
-
-export default todos

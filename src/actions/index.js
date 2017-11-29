@@ -2,8 +2,8 @@ let _id = 0
 export const addTodo = (todo) => ({
   type: 'ADD_TODO',
   id: _id++,
-  todo: todo,
-  state: 'DEFAULT'
+  title: todo.title,
+  body: todo.body
 })
 
 export const showModal = () => ({
@@ -16,7 +16,8 @@ export const dontShowModal = () => ({
   show: false
 })
 
-export const setTodoState = (state) => ({
+export const setTodoState = (id, state) => ({
   type: 'TODO_STATE',
+  id: id,
   state: state
 })
