@@ -20,7 +20,10 @@ const AddTodo = ({todos, dontShowModal}) =>
                                     </div>
                                     <div className="Buttons">
                                         <div className="Cancel-button" onClick={() => dontShowModal(false)}> Cancel</div>
-                                        <div className="Add-button" onClick={() => todos({title, body})}> Add</div>
+                                        <div className="Add-button" onClick={() => {
+                                            todos({title, body})
+                                            dontShowModal(false)
+                                        }}> Add</div>
                                     </div>
                                 </form>
                             </div>

@@ -4,17 +4,20 @@ import CreateTodo from './containers/todo/CreateTodo'
 import Logo from './components/logo/Logo'
 import AddTodo from './containers/todo/AddTodo'
 import Sortable from 'sortablejs'
-import { showModal, addTodo } from './actions'
+import { showModal, addTodo, setTodoState } from './actions'
+import store from './store'
 import './App.css'
 import './components/todo/Todo.css'
 
 const mapStateToProps = (state) => ({
-  showAddModal: state.modal
+  showAddModal: state.modal,
+  todos: state.todos
 })
 
 const mapDispatchToProps = {
   _showModal: showModal,
-  _addTodo: addTodo
+  _addTodo: addTodo,
+  _setTodoState: setTodoState
 }
 class App extends PureComponent {
   componentDidMount(){
@@ -27,16 +30,21 @@ class App extends PureComponent {
   }
 
   render() {
+    const state = store.getState()
+    // const todos = null
     const showAddModal = this.props.showAddModal.slice(-1)[0] || false
     const modal = showAddModal.show ? <AddTodo/> : null
-
-    const todos = <CreateTodo
-        todoTitle="Hello World"
-        todoBody="This is body of my Hello World todo"
-        done={() => console.log("done")}
-        reject={() => console.log("reject")}
-        expand={() => console.log("expand")}
-      />
+    // const todos = state.todos.map(e => 
+    //   <CreateTodo
+    //     key={e.id}
+    //     todoTitle={e.todo.title}
+    //     todoBody={e.todo.body}
+    //     done={() => this.props._setTodoState('DONE')}
+    //     reject={() => this.props._setTodoState('REJECT')}
+    //     expand={() => this.props._setTodoState('EXPAND')}
+    //   />
+    // )
+    const todos = null
     
     return (
       <div className="App">
